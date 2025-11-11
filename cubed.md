@@ -31,7 +31,7 @@ $$
 
 | $k$ | 左側 (差分形式) | 右側 (展開形式) |
 | :---: | :--- | :--- |
-| **1 ($\Delta_{2,1}$) ** | $$\left((n+3)^3-(n+2)^3\right) - \left((n+2)^3-(n+1)^3\right)$$|$$\binom{3}{2}\left[(3^2-2^2)-(2^2-1^2)\right] n + \binom{3}{3}\left[(3^3-2^3)-(2^3-1^3)\right]$$ |
+| **1 ($\Delta_{2,1}$)** | $$\left((n+3)^3-(n+2)^3\right) - \left((n+2)^3-(n+1)^3\right)$$|$$\binom{3}{2}\left[(3^2-2^2)-(2^2-1^2)\right] n + \binom{3}{3}\left[(3^3-2^3)-(2^3-1^3)\right]$$ |
 | **2 ($\Delta_{2,2}$)** | $$\left((n+4)^3-(n+3)^3\right) - \left((n+3)^3-(n+2)^3\right)$$|$$\binom{3}{2}\left[(4^2-3^2)-(3^2-2^2)\right] n + \binom{3}{3}\left[(4^3-3^3)-(3^3-2^3)\right]$$ |
 
 ---
@@ -42,7 +42,7 @@ $$\Delta^3_k = \Delta^2_{k+1} - \Delta^2_k$$
 
 | $k$ | 左側 (差分形式) | 右側 (展開形式) |
 | :---: | :--- | :--- |
-| **1 ($\Delta_{3,1}$) ** | $$\left(\Delta_{2,2}\right) - \left(\Delta_{2,1}\right)$$|$$\binom{3}{3}\left[ \left\{(4^3-3^3)-(3^3-2^3)\right\} - \left\{(3^3-2^3)-(2^3-1^3)\right\} \right]$$ |
+| **1 ($\Delta_{3,1}$)** | $$\left(\Delta_{2,2}\right) - \left(\Delta_{2,1}\right)$$|$$\binom{3}{3}\left[ \left((4^3-3^3)-(3^3-2^3)\right) - \left((3^3-2^3)-(2^3-1^3)\right) \right]$$ |
 
 ---
 
