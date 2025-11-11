@@ -42,7 +42,7 @@ $$\Delta^3_k = \Delta^2_{k+1} - \Delta^2_k$$
 
 | $k$ | 左側 (差分形式) | 右側 (展開形式) |
 | :---: | :--- | :--- |
-| **0** | $$\left(\Delta_{2,1}\right) - \left(\Delta_{2,0}\right)$$|$$\binom{3}{3}\left[ \left\{(3^3-2^3)-(2^3-1^3)\right\} - \left\{(2^3-1^3)-(1^3-0^3)\right\} \right]$$ |
+| **0** | $$\left(\Delta_{2,1}\right) - \left(\Delta_{2,0}\right)$$|$$\binom{3}{3}\left[ \left((3^3-2^3)-(2^3-1^3)\right) - \left((2^3-1^3)-(1^3-0^3)\right) \right]$$ |
 
 ---
 
