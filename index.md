@@ -4,6 +4,9 @@ title: Mathematical Number Theory
 
 # Mathematical Number Theory
 
+## 理論・論文
+- **[多項式差分における連鎖分割理論の構築](math-number-theory.md)** (2025/12/30)
+
 ## ドキュメント
 
 ### 和の公式
@@ -20,4 +23,4 @@ title: Mathematical Number Theory
 - [gen_npower.py](gen_npower.py): 冪乗和の公式生成
 - [calculate_sums.py](calculate_sums.py): 和の計算
 - [process_sums.py](process_sums.py): 和の処理
-- [append_npower.py](append_npower.py): 公式追記 
+- [append_npower.py](append_npower.py): 公式追記
