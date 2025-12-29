@@ -4,5 +4,7 @@
 !*/
 # Allow markdown files
 !*.md
+# Allow python files
+!*.py
 # Allow .gitignore itself
 !.gitignore

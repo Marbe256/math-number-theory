@@ -1,5 +1,4 @@
 ---
-layout: default
 title: 和の公式集
 ---
 

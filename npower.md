@@ -1,6 +1,5 @@
 ---
-layout: default
-title: 和の公式集
+title: 和の公べき乗式集
 ---
 
 $$

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Mathematical Number Theory
 ---
 
