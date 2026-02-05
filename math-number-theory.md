@@ -71,22 +71,19 @@ $(({}_5 C_2 \times {}_2 C_1 \times {}_1 C_0) + ({}_5 C_4 \times {}_4 C_1 \times 
 > \Delta^m (n+k)^\alpha = \sum_{p_1=m}^{\alpha} \left( \frac{\alpha!}{(\alpha-p_1)! p_1!} n^{\alpha-p_1} \cdot \sum_{j} \text{Coeff}(p_1, m, j) \cdot k^j \right) \quad (5)
 > $$
 >
->
-> 
 > ここで係数 $\text{Coeff}$ は、減少量の合計 $d_1 + \dots + d_m = p_1 - j$ を満たす全ての正の整数解（落差の分割）における多項係数の総和に等しい。
 > 
 >
 > $$
-> \text{Coeff}(p_1, m, j) = \sum_{d_i \ge 1} \frac{p_1!}{d_1! d_2! \dots d_m! \cdot j!} \quad (6)
+> \text{Coeff}(p_1, m, j) = \sum_{\substack{d_1 + d_2 + \dots + d_m = p_1 - j \\ d_i \ge 1}} \frac{p_1!}{d_1! d_2! \dots d_m! \cdot j!} \quad(6)
 > $$
->
 >
 
 ### 5. 数論的背景：第2種スターリング数との接続 (Theoretical Background: Connection to Stirling Numbers)
 本理論で導出した $\text{Coeff}$ は、第2種スターリング数 $S_2(n, k)$ を用いて以下の通り一般化される。
 
 $$
-\text{Coeff}(p_1, m, j) = \frac{(j+m)!}{j!} \cdot S_2(p_1, j+m) \quad (7)
+\text{Coeff}(p_1, m, j) = \binom{p_1}{j} m! S_2(p_1-j, m) \quad (7)
 $$
 
 二項係数の積 ${}_n C_a \cdot {}_a C_b$ を階乗形式に分解すると、分母に各段階の「落差」が現れる。この落差の順序不変性が、多項係数によるパターンの集約を可能にしている。
