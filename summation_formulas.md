@@ -43,7 +43,11 @@ $$
 $$
 
 $$
-\Sigma^{2,3} =\sum_{k=1}^{n-1} (n-k)^2k^3 = n^2\sum_{k=1}^{n-1} k^3 - 2n\sum_{k=1}^{n-1} k^4 + \sum_{k=1}^{n-1} k^5 \newline \hspace{7em} = n^2\left(\frac{n^{4}}{4}-\frac{n^{3}}{2}+\frac{n^{2}}{4}\right) - 2n\left(\frac{n^{5}}{5}-\frac{n^{4}}{2}+\frac{n^{3}}{3}-\frac{n}{30}\right) + \left(\frac{n^{6}}{6}-\frac{n^{5}}{2}+\frac{5n^{4}}{12}-\frac{n^{2}}{12}\right) \newline \hspace{7em} = \frac{n^{6}}{60}-\frac{n^{2}}{60}
+\begin{aligned}
+\Sigma^{2,3} &= \sum_{k=1}^{n-1} (n-k)^2k^3 = n^2\sum_{k=1}^{n-1} k^3 - 2n\sum_{k=1}^{n-1} k^4 + \sum_{k=1}^{n-1} k^5 \\
+&= n^2\left(\frac{n^{4}}{4}-\frac{n^{3}}{2}+\frac{n^{2}}{4}\right) - 2n\left(\frac{n^{5}}{5}-\frac{n^{4}}{2}+\frac{n^{3}}{3}-\frac{n}{30}\right) + \left(\frac{n^{6}}{6}-\frac{n^{5}}{2}+\frac{5n^{4}}{12}-\frac{n^{2}}{12}\right) \\
+&= \frac{n^{6}}{60}-\frac{n^{2}}{60}
+\end{aligned}
 $$
 
 $$
@@ -51,15 +55,27 @@ $$
 $$
 
 $$
-\Sigma^{1,5} =\sum_{k=1}^{n-1} (n-k)k^5 = n\sum_{k=1}^{n-1} k^5 - \sum_{k=1}^{n-1} k^6 \newline \hspace{7em} = n\left(\frac{n^{6}}{6}-\frac{n^{5}}{2}+\frac{5n^{4}}{12}-\frac{n^{2}}{12}\right) - \left(\frac{n^{7}}{7}-\frac{n^{6}}{2}+\frac{n^{5}}{2}-\frac{n^{3}}{6}+\frac{n}{42}\right) \newline = \frac{n^{7}}{42}-\frac{n^{5}}{12}+\frac{n^{3}}{12}-\frac{n}{42}
+\begin{aligned}
+\Sigma^{1,5} &= \sum_{k=1}^{n-1} (n-k)k^5 = n\sum_{k=1}^{n-1} k^5 - \sum_{k=1}^{n-1} k^6 \\
+&= n\left(\frac{n^{6}}{6}-\frac{n^{5}}{2}+\frac{5n^{4}}{12}-\frac{n^{2}}{12}\right) - \left(\frac{n^{7}}{7}-\frac{n^{6}}{2}+\frac{n^{5}}{2}-\frac{n^{3}}{6}+\frac{n}{42}\right) \\
+&= \frac{n^{7}}{42}-\frac{n^{5}}{12}+\frac{n^{3}}{12}-\frac{n}{42}
+\end{aligned}
 $$
 
 $$
-\Sigma^{2,4} =\sum_{k=1}^{n-1} (n-k)^2k^4 = n^2\sum_{k=1}^{n-1} k^4 - 2n\sum_{k=1}^{n-1} k^5 + \sum_{k=1}^{n-1} k^6 \newline \hspace{7em} = n^2\left(\frac{n^{5}}{5}-\frac{n^{4}}{2}+\frac{n^{3}}{3}-\frac{n}{30}\right) - 2n\left(\frac{n^{6}}{6}-\frac{n^{5}}{2}+\frac{5n^{4}}{12}-\frac{n^{2}}{12}\right) + \left(\frac{n^{7}}{7}-\frac{n^{6}}{2}+\frac{n^{5}}{2}-\frac{n^{3}}{6}+\frac{n}{42}\right) \newline \hspace{7em} = \frac{n^{7}}{105}-\frac{n^{3}}{30}+\frac{n}{42}
+\begin{aligned}
+\Sigma^{2,4} &=\sum_{k=1}^{n-1} (n-k)^2k^4 = n^2\sum_{k=1}^{n-1} k^4 - 2n\sum_{k=1}^{n-1} k^5 + \sum_{k=1}^{n-1} k^6 \\
+&= n^2\left(\frac{n^{5}}{5}-\frac{n^{4}}{2}+\frac{n^{3}}{3}-\frac{n}{30}\right) - 2n\left(\frac{n^{6}}{6}-\frac{n^{5}}{2}+\frac{5n^{4}}{12}-\frac{n^{2}}{12}\right) + \left(\frac{n^{7}}{7}-\frac{n^{6}}{2}+\frac{n^{5}}{2}-\frac{n^{3}}{6}+\frac{n}{42}\right) \\
+&= \frac{n^{7}}{105}-\frac{n^{3}}{30}+\frac{n}{42}
+\end{aligned}
 $$
 
 $$
-\Sigma^{3,3} =\sum_{k=1}^{n-1} (n-k)^3k^3 = n^3\sum_{k=1}^{n-1} k^3 - 3n^2\sum_{k=1}^{n-1} k^4 + 3n\sum_{k=1}^{n-1} k^5 - \sum_{k=1}^{n-1} k^6 \newline \hspace{7em} = n^3\left(\frac{n^{4}}{4}-\frac{n^{3}}{2}+\frac{n^{2}}{4}\right) - 3n^2\left(\frac{n^{5}}{5}-\frac{n^{4}}{2}+\frac{n^{3}}{3}-\frac{n}{30}\right) + 3n\left(\frac{n^{6}}{6}-\frac{n^{5}}{2}+\frac{5n^{4}}{12}-\frac{n^{2}}{12}\right) - \left(\frac{n^{7}}{7}-\frac{n^{6}}{2}+\frac{n^{5}}{2}-\frac{n^{3}}{6}+\frac{n}{42}\right) \newline \hspace{7em} = \frac{n^{7}}{140}+\frac{n^{3}}{60}-\frac{n}{42}
+\begin{aligned}
+\Sigma^{3,3} &=\sum_{k=1}^{n-1} (n-k)^3k^3 = n^3\sum_{k=1}^{n-1} k^3 - 3n^2\sum_{k=1}^{n-1} k^4 + 3n\sum_{k=1}^{n-1} k^5 - \sum_{k=1}^{n-1} k^6 \\
+&= n^3\left(\frac{n^{4}}{4}-\frac{n^{3}}{2}+\frac{n^{2}}{4}\right) - 3n^2\left(\frac{n^{5}}{5}-\frac{n^{4}}{2}+\frac{n^{3}}{3}-\frac{n}{30}\right) + 3n\left(\frac{n^{6}}{6}-\frac{n^{5}}{2}+\frac{5n^{4}}{12}-\frac{n^{2}}{12}\right) - \left(\frac{n^{7}}{7}-\frac{n^{6}}{2}+\frac{n^{5}}{2}-\frac{n^{3}}{6}+\frac{n}{42}\right) \\
+&= \frac{n^{7}}{140}+\frac{n^{3}}{60}-\frac{n}{42}
+\end{aligned}
 $$
 
 $$
