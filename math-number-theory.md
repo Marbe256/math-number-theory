@@ -75,7 +75,7 @@ $(({}_5 C_2 \times {}_2 C_1 \times {}_1 C_0) + ({}_5 C_4 \times {}_4 C_1 \times 
 > 
 >
 > $$
-> \text{Coeff}(p_1, m, j) = \sum_{\substack{d_1 + d_2 + \dots + d_m = p_1 - j \\ d_i \ge 1}} \frac{p_1!}{d_1! d_2! \dots d_m! \cdot j!} \quad(6)
+> \text{Coeff}(p_1, m, j) = \sum_{\substack{d_1 + d_2 + \dots + d_m = p_1 - j \newline d_i \ge 1}} \frac{p_1!}{d_1! d_2! \dots d_m! \cdot j!} \quad(6)
 > $$
 >
 
