@@ -11,48 +11,48 @@
 多項式 $(n+k)^\alpha$ を初期値 $n$ と変数 $k$ に分配し、そこへ $m$ 階差分 $\Delta^m$ を作用させる構造を定義する。まず、二項展開により以下の式を得る。
 
 $$
-(n+k)^\alpha = \sum_{p_1=0}^{\alpha} {}_\alpha C_{p_1} n^{\alpha-p_1} k^{p_1} \quad (1)
+(n+k)^\alpha = \sum_{p=0}^{\alpha} {}_\alpha C_{p} n^{\alpha-p} k^{p} \quad (1)
 $$
 
-この式に $m$ 階差分を適用すると、$p_1 < m$ の項は消滅するため、和の範囲は $m$ から $\alpha$ となる。
+この式に $m$ 階差分を適用すると、$p < m$ の項は消滅するため、和の範囲は $m$ から $\alpha$ となる。
 
 $$
-\Delta^m (n+k)^\alpha = \sum_{p_1=m}^{\alpha} {}_\alpha C_{p_1} n^{\alpha-p_1} \cdot (\Delta^m k^{p_1}) \quad (2)
+\Delta^m (n+k)^\alpha = \sum_{p=m}^{\alpha} {}_\alpha C_{p} n^{\alpha-p} \cdot (\Delta^m k^{p}) \quad (2)
 $$
 
 ### 2. 差分係数の定式化と具体的展開 (Formulation and Expansion of Difference Coefficients)
-$k^{p_1}$ に $m$ 階差分を作用させた際に現れる $j$ 次項の係数 $\text{Coeff}(p_1, m, j)$ を次のように定義する。
+$k^{p}$ に $m$ 階差分を作用させた際に現れる $j$ 次項の係数 $\text{Coeff}(p, m, j)$ を次のように定義する。
 
 $$
-\Delta^m k^{p_1} = \sum_{j=0}^{p_1-m} \text{Coeff}(p_1, m, j) \, k^j \quad (3)
+\Delta^m k^{p} = \sum_{j=0}^{p-m} \text{Coeff}(p, m, j) \, k^j \quad (3)
 $$
 
 この係数は、二項係数の連鎖的な積の総和として記述可能である。
 
 $$
-\text{Coeff}(p_1, m, j) = \sum_{p_1 > i_1 > i_2 > \dots > i_{m-1} > j} ({}_{p_1} C_{i_1} \cdot {}_{i_1} C_{i_2} \cdot \dots \cdot {}_{i_{m-1}} C_j) \quad (4)
+\text{Coeff}(p, m, j) = \sum_{p > i_1 > i_2 > \dots > i_{m-1} > j} ({}_{p} C_{i_1} \cdot {}_{i_1} C_{i_2} \cdot \dots \cdot {}_{i_{m-1}} C_j) \quad (4)
 $$
 
-以下に、 $\text{Coeff}(p_1, m, j)$  の具体的な値を、元の次数 $p_1$ に基づいて第5項まで示す。
+以下に、 $\text{Coeff}(p, m, j)$  の具体的な値を、元の次数 $p$ に基づいて第5項まで示す。
 
-| 元の次数 ($p_1$) | 第1項 ($k^{p_1-m}$) | 第2項 ($k^{p_1-m-1}$)                       | 第3項 ($k^{p_1-m-2}$)                | 第4項 ($k^{p_1-m-3}$)                | 第5項 ($k^{p_1-m-4}$)                                 |
-| :--------------- | :------------------ | :------------------------------------------ | :----------------------------------- | :----------------------------------- | :---------------------------------------------------- |
-| **$p_1 = m$**    | $m!$                | $0$                                         | $0$                                  | $0$                                  | $0$                                                   |
-| **$p_1 = m+1$**  | $\frac{(m+1)!}{1!}$ | $\frac{(m+1)! \cdot m}{2!}$                 | $0$                                  | $0$                                  | $0$                                                   |
-| **$p_1 = m+2$**  | $\frac{(m+2)!}{2!}$ | $\frac{(m+2)! \cdot m}{2!}$                 | $\frac{(m+2)! \cdot m(3m+1)}{24}$    | $0$                                  | $0$                                                   |
-| **$p_1 = m+3$**  | $\frac{(m+3)!}{3!}$ | $\frac{(m+3)! \cdot m \cdot 3}{3! \cdot 2}$ | $\frac{(m+3)! \cdot m(3m+5)}{24}$    | $\frac{(m+3)! \cdot m^2(m+1)}{48}$   | $0$                                                   |
-| **$p_1 = m+4$**  | $\frac{(m+4)!}{4!}$ | $\frac{(m+4)! \cdot m}{12}$                 | $\frac{(m+4)! \cdot m(3m+13)}{144}$  | $\frac{(m+4)! \cdot m^2(m+3)}{144}$  | $\frac{(m+4)! \cdot m(15m^3+30m^2+5m-2)}{5760}$       |
-| **$p_1 = m+5$**  | $\frac{(m+5)!}{5!}$ | $\frac{(m+5)! \cdot m}{48}$                 | $\frac{(m+5)! \cdot m(3m+25)}{1440}$ | $\frac{(m+5)! \cdot m^2(m+7)}{1152}$ | $\frac{(m+5)! \cdot m(15m^3+150m^2+485m+226)}{11520}$ |
+| 元の次数 ($p$) | 第1項 ($k^{p-m}$)   | 第2項 ($k^{p-m-1}$)                         | 第3項 ($k^{p-m-2}$)                  | 第4項 ($k^{p-m-3}$)                  | 第5項 ($k^{p-m-4}$)                                   |
+| :------------- | :------------------ | :------------------------------------------ | :----------------------------------- | :----------------------------------- | :---------------------------------------------------- |
+| **$p = m$**    | $m!$                | $0$                                         | $0$                                  | $0$                                  | $0$                                                   |
+| **$p = m+1$**  | $\frac{(m+1)!}{1!}$ | $\frac{(m+1)! \cdot m}{2!}$                 | $0$                                  | $0$                                  | $0$                                                   |
+| **$p = m+2$**  | $\frac{(m+2)!}{2!}$ | $\frac{(m+2)! \cdot m}{2!}$                 | $\frac{(m+2)! \cdot m(3m+1)}{24}$    | $0$                                  | $0$                                                   |
+| **$p = m+3$**  | $\frac{(m+3)!}{3!}$ | $\frac{(m+3)! \cdot m \cdot 3}{3! \cdot 2}$ | $\frac{(m+3)! \cdot m(3m+5)}{24}$    | $\frac{(m+3)! \cdot m^2(m+1)}{48}$   | $0$                                                   |
+| **$p = m+4$**  | $\frac{(m+4)!}{4!}$ | $\frac{(m+4)! \cdot m}{12}$                 | $\frac{(m+4)! \cdot m(3m+13)}{144}$  | $\frac{(m+4)! \cdot m^2(m+3)}{144}$  | $\frac{(m+4)! \cdot m(15m^3+30m^2+5m-2)}{5760}$       |
+| **$p = m+5$**  | $\frac{(m+5)!}{5!}$ | $\frac{(m+5)! \cdot m}{48}$                 | $\frac{(m+5)! \cdot m(3m+25)}{1440}$ | $\frac{(m+5)! \cdot m^2(m+7)}{1152}$ | $\frac{(m+5)! \cdot m(15m^3+150m^2+485m+226)}{11520}$ |
 
 ### 3. 連鎖的遷移と落差の分割 (Chain Transitions and Partitions of Differences)
 高次の項から低次の項へ、差分作用を通じて係数が「流れ込む」メカニズムを考察する。
 
-#### 3.1 事例分析：  $p_1=4, m=2$
+#### 3.1 事例分析：  $p=4, m=2$
 * **$k^2$ 係数:** ${}_4 C_3 \times {}_3 C_2 = 12$
 * **$k^1$ 係数:** $({}_4 C_3 \times {}_3 C_1) + ({}_4 C_2 \times {}_2 C_1) = 24$
 * **$k^0$ 係数:** ${}_4 C_3 \times {}_3 C_0 + {}_4 C_2 \times {}_2 C_0 + {}_4 C_1 \times {}_1 C_0 = 14$
 
-#### 3.2 事例分析：  $p_1=5, m=3$
+#### 3.2 事例分析：  $p=5, m=3$
 * **$k^2$ 係数:** ${}_5 C_4 \times {}_4 C_3 \times {}_3 C_2 = 60$
 * **$k^1$ 係数:** 遷移経路（例： $5 \to 3 \to 2 \to 1$ ）の合流。計 $60 \times 3 = 180$
 $({}_5 C_3 \times {}_3 C_2 \times {}_2 C_1) + ({}_5 C_4 \times {}_4 C_2 \times {}_2 C_1) + ({}_5 C_4 \times {}_4 C_3 \times {}_3 C_1) = (10 \times 3 \times 2)+(5 \times 6 \times 2)+(5 \times 4 \times 3) = 180$
@@ -68,14 +68,14 @@ $(({}_5 C_2 \times {}_2 C_1 \times {}_1 C_0) + ({}_5 C_4 \times {}_4 C_1 \times 
 > 
 >
 > $$
-> \Delta^m (n+k)^\alpha = \sum_{p_1=m}^{\alpha} \left( \frac{\alpha!}{(\alpha-p_1)! p_1!} n^{\alpha-p_1} \cdot \sum_{j} \text{Coeff}(p_1, m, j) \cdot k^j \right) \quad (5)
+> \Delta^m (n+k)^\alpha = \sum_{p=m}^{\alpha} \left( \frac{\alpha!}{(\alpha-p)! p!} n^{\alpha-p} \cdot \sum_{j} \text{Coeff}(p, m, j) \cdot k^j \right) \quad (5)
 > $$
 >
-> ここで係数 $\text{Coeff}$ は、減少量の合計 $d_1 + \dots + d_m = p_1 - j$ を満たす全ての正の整数解（落差の分割）における多項係数の総和に等しい。
+> ここで係数 $\text{Coeff}$ は、減少量の合計 $d_1 + \dots + d_m = p - j$ を満たす全ての正の整数解（落差の分割）における多項係数の総和に等しい。
 > 
 >
 > $$
-> \text{Coeff}(p_1, m, j) = \sum_{\substack{d_1 + d_2 + \dots + d_m = p_1 - j \newline d_i \ge 1}} \frac{p_1!}{d_1! d_2! \dots d_m! \cdot j!} \quad(6)
+> \text{Coeff}(p, m, j) = \sum_{\substack{d_1 + d_2 + \dots + d_m = p - j \newline d_i \ge 1}} \frac{p!}{d_1! d_2! \dots d_m! \cdot j!} \quad(6)
 > $$
 >
 
@@ -83,7 +83,7 @@ $(({}_5 C_2 \times {}_2 C_1 \times {}_1 C_0) + ({}_5 C_4 \times {}_4 C_1 \times 
 本理論で導出した $\text{Coeff}$ は、第2種スターリング数 $S_2(n, k)$ を用いて以下の通り一般化される。
 
 $$
-\text{Coeff}(p_1, m, j) = \binom{p_1}{j} m! S_2(p_1-j, m) \quad (7)
+\text{Coeff}(p, m, j) = \binom{p}{j} m! S_2(p-j, m) \quad (7)
 $$
 
 二項係数の積 ${}_n C_a \cdot {}_a C_b$ を階乗形式に分解すると、分母に各段階の「落差」が現れる。この落差の順序不変性が、多項係数によるパターンの集約を可能にしている。
