@@ -75,8 +75,11 @@ $$S(a, a+4, n) = \frac{1}{2} (n^4 S_0 - 4n^2 S_1 + 2 S_2) \quad \dots (5)$$
 
 **定理 1 (完全対称化公式)**
 任意の非負整数 $a, c$ および自然数 $n$ において、以下が普遍的に成立する。
+
 $$ S(a, a+c, n) = \frac{1}{2} \sum_{k=0}^{\lfloor c/2 \rfloor} \mathcal{A}_{c,k} \cdot n^{c-2k} \cdot S_{k} $$
+
 ここで、展開係数 $ \mathcal{A}_{c,k} $ は以下の一般項を持つ。
+
 $$ \mathcal{A}_{c,k} = (-1)^k \frac{c}{c-k} \binom{c-k}{k} $$
 
 ### 4.1 普遍性の証明と一般項の導出
