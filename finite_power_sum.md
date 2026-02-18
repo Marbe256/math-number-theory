@@ -39,20 +39,20 @@ $$S(a, a+c, n) = n S(a, a+c-1, n) - S(a+1, a+c-1, n) \quad \dots (1)$$
 式(1)を反復的に適用し、非対称項を対称核 $S_k$ へと還元する過程を以下に示す。
 
 - **$c=1$ の場合**
-- 
-  $$S(a, a+1, n) = \frac{n}{2} S_0 \quad \dots (2)$$
-- 
+
+$$S(a, a+1, n) = \frac{n}{2} S_0 \quad \dots (2)$$
+
 - **$c=2$ の場合**
   
-  $$S(a, a+2, n) = \frac{1}{2} (n^2 S_0 - 2 S_1) \quad \dots (3)$$
+$$S(a, a+2, n) = \frac{1}{2} (n^2 S_0 - 2 S_1) \quad \dots (3)$$
 
 - **$c=3$ の場合**
 
-  $$S(a, a+3, n) = \frac{1}{2} (n^3 S_0 - 3n S_1) \quad \dots (4)$$
+$$S(a, a+3, n) = \frac{1}{2} (n^3 S_0 - 3n S_1) \quad \dots (4)$$
 
 - **$c=4$ の場合**
 
-  $$S(a, a+4, n) = \frac{1}{2} (n^4 S_0 - 4n^2 S_1 + 2 S_2) \quad \dots (5)$$
+$$S(a, a+4, n) = \frac{1}{2} (n^4 S_0 - 4n^2 S_1 + 2 S_2) \quad \dots (5)$$
 
 ## 3. 変形チェビシェフ多項式との対比
 
