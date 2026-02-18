@@ -57,14 +57,14 @@ $$S(a, a+c, n) = n S(a, a+c-1, n) - S(a+1, a+c-1, n) \quad \dots (1)$$
 
 **定理 1 (完全対称化公式)**
 任意の非負整数 $a, c$ および自然数 $n$ において、以下が普遍的に成立する。
-$$S(a, a+c, n) = \frac{1}{2} \sum_{k=0}^{\lfloor c/2 \rfloor} \mathcal{A}_{c,k} \cdot n^{c-2k} \cdot S_{k}$$
-ここで、展開係数 $\mathcal{A}_{c,k}$ は以下の一般項を持つ。
-$$\mathcal{A}_{c,k} = (-1)^k \frac{c}{c-k} \binom{c-k}{k}$$
+$$ S(a, a+c, n) = \frac{1}{2} \sum_{k=0}^{\lfloor c/2 \rfloor} \mathcal{A}_{c,k} \cdot n^{c-2k} \cdot S_{k} $$
+ここで、展開係数 $ \mathcal{A}_{c,k} $ は以下の一般項を持つ。
+$$ \mathcal{A}_{c,k} = (-1)^k \frac{c}{c-k} \binom{c-k}{k} $$
 
 ### 4.1 普遍性の証明と一般項の導出
 **1. 係数漸化式の抽出**
-式(1) $S_c = n S_{c-1} - S_{c-2}$ の展開式において、$n^{c-2k}$ の係数に着目する。項の次数の整合性より、係数 $\mathcal{A}_{c,k}$ は以下の漸化式を充足しなければならない。
-$$\mathcal{A}_{c,k} = \mathcal{A}_{c-1,k} - \mathcal{A}_{c-2,k-1} \quad \dots (6)$$
+式(1) $S_c = n S_{c-1} - S_{c-2}$ の展開式において、$n^{c-2k}$ の係数に着目する。項の次数の整合性より、係数 $ \mathcal{A}_{c,k} $ は以下の漸化式を充足しなければならない。
+$$ \mathcal{A}_{c,k} = \mathcal{A}_{c-1,k} - \mathcal{A}_{c-2,k-1} \quad \dots (6) $$
 
 **2. 一般項の代数的妥当性**
 提示された一般項 $\mathcal{A}_{c,k} = (-1)^k \frac{c}{c-k} \binom{c-k}{k}$ を式(6)の右辺へ代入する。二項係数の性質 $\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$ を適用し、整理を行うことで、左辺と等価な形式が得られる。これにより、本一般項が係数漸化式の解であることが示される。
