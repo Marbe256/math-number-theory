@@ -23,14 +23,14 @@
 - **[多項式差分の連鎖分割公式集 (c=3 ～ c=23)](S0_Chain_3-23.md)**: 中心対称な偶数次基底に集約した凝縮形式の公式。
 - **[和の公式集](summation_formulas.md)**: 数列の和に関する基本的な公式。
 - **べき乗式集**:
-  - ($n^3 - n^{12}$) のべき乗和(npower.md)
-  - ($n^{13} - n^{29}$) のべき乗和(npower2.md)
-  - ($n^{3} - n^{29}$) 対称和形式(npowerS.md)
+  - ($n^3 - n^{12}$) のべき乗和( [npower.md](npower.md) )
+  - ($n^{13} - n^{29}$) のべき乗和( [npower2.md](npower2.md) )
+  - ($n^{3} - n^{29}$) 対称和形式( [npowerS.md](npowerS.md) )
 
 ### 2. 差分計算の研究
-- ($n+k)^\alpha$ の差分操作 (一般化) (alphapower.md)
-- ($n+k)^3$ の差分操作 (cubed.md)
-- ($n+k)^4$ の差分操作 (fourthpower.md)
+- ($n+k)^\alpha$ の差分操作 (一般化) ( [alphapower.md](alphapower.md) )
+- ($n+k)^3$ の差分操作 ( [cubed.md](cubed.md) )
+- ($n+k)^4$ の差分操作 ( [fourthpower.md](fourthpower.md) )
 
 ## 構成
 本リポジトリは GitHub Pages を利用して公開されています。
