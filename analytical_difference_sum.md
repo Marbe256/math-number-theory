@@ -205,7 +205,7 @@ $$
 
 $$
 \begin{aligned} 
-\Delta S(a+1, b+2, n) = \,\, & n^{a+1} \\ 
+\Delta S(a+1, b+2, n) =\space & n^{a+1} \\ 
 & + (b+2)S(a+1, b+1, n) \\ 
 & + \sum_{j=1}^{n-1} (n-j)^{a+1} (j+1)^{b+2} \\ 
 & - S(b+2, a+1, n) \\ 
@@ -221,8 +221,8 @@ $$
 
 $$
 \begin{aligned} 
-\Delta S(a+1, b+2, n) = \,\, & \biggl( n^{a+1} + \sum_{j=1}^{n-1} j^{a+1} (n+1-j)^{b+2} \biggr) - S(b+2, a+1, n) \\ 
-= \,\, & S(a+1, b+2, n+1) - S(a+1, b+2, n) 
+\Delta S(a+1, b+2, n) =& \biggl( n^{a+1} + \sum_{j=1}^{n-1} j^{a+1} (n+1-j)^{b+2} \biggr) - S(b+2, a+1, n) \\ 
+=& S(a+1, b+2, n+1) - S(a+1, b+2, n) 
 \end{aligned} \quad \dots (26)
 $$
 
