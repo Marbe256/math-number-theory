@@ -5,10 +5,12 @@
 本稿は、一般化された有限べき乗和の変数および指数に対する解析的拡張（実数・複素数領域への拡張）を前提とし、同関数に対する微分、積分、および積分変換（ラプラス変換・通常型母関数）の適用がもたらす代数構造の変化を記述するものである。
 
 離散和 $S(a, b, n)$ は以下の通り定義される。
-$$S(a, b, n) = \sum_{j=1}^{n-1} j^a (n-j)^b \tag{1}$$
+
+$$S(a, b, n) = \sum_{j=1}^{n-1} j^a (n-j)^b \quad \dots (1)$$
 
 また、実数変数 $x > 0$ に対する連続的拡張 $S_{cont}(a, b, x)$ を、ベータ関数 $B(x, y)$ を用いて以下のように定義する。
-$$S_{cont}(a, b, x) = x^{a+b+1} B(a+1, b+1) \tag{2}$$
+
+$$S_{cont}(a, b, x) = x^{a+b+1} B(a+1, b+1) \quad \dots (2)$$
 
 
 
@@ -18,16 +20,19 @@ $$S_{cont}(a, b, x) = x^{a+b+1} B(a+1, b+1) \tag{2}$$
 
 ### 2.1 離散和の偏微分と対数重み付き和の生成
 式(1)に対してパラメータ $a$ による偏微分を実行すると、指数関数の微分法則 $\frac{\partial}{\partial a} j^a = j^a \ln j$ に基づき、次式が得られる。
-$$\frac{\partial}{\partial a} S(a, b, n) = \sum_{j=1}^{n-1} j^a (\ln j) (n-j)^b \tag{3}$$
+
+$$\frac{\partial}{\partial a} S(a, b, n) = \sum_{j=1}^{n-1} j^a (\ln j) (n-j)^b \quad \dots (3)$$
 
 この操作により、$S(a, b, n)$ は対数項 $\ln j$ を含む有限べき乗和の母関数としての性質を帯びる。高階微分 $\frac{\partial^k}{\partial a^k}$ の適用は、$(\ln j)^k$ の重みを持つ和を帰納的に導出する。
 
 ### 2.2 連続的拡張の偏微分とディガンマ関数の発現
 連続적拡張である式(2)の偏微分において、ベータ関数 $B(a+1, b+1) = \frac{\Gamma(a+1)\Gamma(b+1)}{\Gamma(a+b+2)}$ の対数微分は、ディガンマ関数 $\psi(z) = \frac{\Gamma'(z)}{\Gamma(z)}$ を用いて記述される。
-$$\frac{\partial}{\partial a} B(a+1, b+1) = B(a+1, b+1) (\psi(a+1) - \psi(a+b+2)) \tag{4}$$
+
+$$\frac{\partial}{\partial a} B(a+1, b+1) = B(a+1, b+1) (\psi(a+1) - \psi(a+b+2)) \quad \dots (4)$$
 
 積の微分法則を適用することで、式(2)の偏微分は次のように整理される。
-$$\frac{\partial}{\partial a} S_{cont}(a, b, x) = S_{cont}(a, b, x) \left( \ln x + \psi(a+1) - \psi(a+b+2) \right) \tag{5}$$
+
+$$\frac{\partial}{\partial a} S_{cont}(a, b, x) = S_{cont}(a, b, x) \left( \ln x + \psi(a+1) - \psi(a+b+2) \right) \quad \dots (5)$$
 
 式(5)は、離散和における対数項の生成（式3）の極限的振る舞いが、連続領域においては対数関数 $\ln x$ およびディガンマ関数 $\psi$ の加法的な補正項として評価される構造を示している。
 
@@ -37,7 +42,8 @@ $$\frac{\partial}{\partial a} S_{cont}(a, b, x) = S_{cont}(a, b, x) \left( \ln x
 
 ### 3.1 差分演算による多項式階層の導出
 式(1)に対して前進差分を適用し、二項定理を用いて展開・整理すると、以下の関係が導出される。
-$$\Delta_n S(a, b, n) = \sum_{k=0}^{b-1} \binom{b}{k} S(a, k, n) + n^a \tag{6}$$
+
+$$\Delta_n S(a, b, n) = \sum_{k=0}^{b-1} \binom{b}{k} S(a, k, n) + n^a \quad \dots (6)$$
 
 式(6)は、$S(a, b, n)$ の差分がパラメータ $b$ に関して低次の有限べき乗和 $S(a, k, n)$ （$k < b$）の線形結合と境界項 $n^a$ に帰着することを示している。これは、多項式の微分が次数を低下させる解析的性質の、離散空間における直接的な対応構造である。
 
@@ -47,13 +53,15 @@ $$\Delta_n S(a, b, n) = \sum_{k=0}^{b-1} \binom{b}{k} S(a, k, n) + n^a \tag{6}$$
 
 ### 4.1 連続領域における微分
 べき関数の微分法則より、次式が導出される。
-$$\frac{d}{dx} S_{cont}(a, b, x) = (a+b+1) x^{a+b} B(a+1, b+1) \tag{7}$$
+
+$$\frac{d}{dx} S_{cont}(a, b, x) = (a+b+1) x^{a+b} B(a+1, b+1) \quad \dots (7)$$
 
 式(7)は、$x$ に関する多項式の次数が正確に $1$ 低下することを示しており、$x \to \infty$ の漸近極限において離散差分 $\Delta_n S(a, b, n)$ の最高次項の係数と一致する。
 
 ### 4.2 連続領域における積分
 同様に、不定積分操作により次式が得られる。
-$$\int S_{cont}(a, b, x) dx = \frac{1}{a+b+2} x^{a+b+2} B(a+1, b+1) + C \tag{8}$$
+
+$$\int S_{cont}(a, b, x) dx = \frac{1}{a+b+2} x^{a+b+2} B(a+1, b+1) + C \quad \dots (8)$$
 
 積分操作は離散空間における和分に対応し、次数を $a+b+2$ へと上昇させ、多項式としての階層構造を可逆的に維持する。
 
@@ -63,19 +71,23 @@ $$\int S_{cont}(a, b, x) dx = \frac{1}{a+b+2} x^{a+b+2} B(a+1, b+1) + C \tag{8}$
 
 ### 5.1 連続領域におけるラプラス変換とベータ関数の必然性
 連続領域における $S_{cont}(a, b, t)$ は、2つのべき関数 $f(t) = t^a$ および $g(t) = t^b$ の畳み込み積分として定式化される。
-$$(f * g)(t) = \int_{0}^{t} x^a (t-x)^b dx = S_{cont}(a, b, t) \tag{9}$$
+
+$$(f * g)(t) = \int_{0}^{t} x^a (t-x)^b dx = S_{cont}(a, b, t) \quad \dots (9)$$
 
 ラプラス変換の畳み込み定理 $\mathcal{L}\{f * g\} = \mathcal{L}\{f\} \cdot \mathcal{L}\{g\}$ を適用すると、変換空間においてこの積分は純粋な積に分解される。
-$$\mathcal{L}\{S_{cont}\}(s) = \frac{\Gamma(a+1)}{s^{a+1}} \cdot \frac{\Gamma(b+1)}{s^{b+1}} = \frac{\Gamma(a+1)\Gamma(b+1)}{s^{a+b+2}} \tag{10}$$
+
+$$\mathcal{L}\{S_{cont}\}(s) = \frac{\Gamma(a+1)}{s^{a+1}} \cdot \frac{\Gamma(b+1)}{s^{b+1}} = \frac{\Gamma(a+1)\Gamma(b+1)}{s^{a+b+2}} \quad \dots (10)$$
 
 
 
 逆ラプラス変換を適用することで、ベータ関数を伴う式(11)が一意に定まる。
-$$S_{cont}(a, b, t) = B(a+1, b+1) t^{a+b+1} \tag{11}$$
+
+$$S_{cont}(a, b, t) = B(a+1, b+1) t^{a+b+1} \quad \dots (11)$$
 
 ### 5.2 離散領域における母関数と多重対数関数への分解
 離散和 $S(a, b, n)$ は、数列 $f_n = n^a$ と $g_n = n^b$ の離散畳み込みである。通常型母関数（OGF）を適用すると、多重対数関数（ポリログ関数） $\text{Li}_{-k}(z) = \sum_{n=1}^{\infty} n^k z^n$ を用いて、変換空間における積の構造が定式化される。
-$$G(z) = \sum_{n=1}^{\infty} S(a, b, n) z^n = \text{Li}_{-a}(z) \cdot \text{Li}_{-b}(z) \tag{12}$$
+
+$$G(z) = \sum_{n=1}^{\infty} S(a, b, n) z^n = \text{Li}_{-a}(z) \cdot \text{Li}_{-b}(z) \quad \dots (12)$$
 
 式(12)は、$S(a, b, n)$ の解析的性質が、複素平面上における多重対数関数の積の挙動（極や分岐点）に依存していることを示している。
 

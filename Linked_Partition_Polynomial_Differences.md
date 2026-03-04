@@ -50,7 +50,7 @@ S_{c, d} \equiv S(a+c, a+d, n) \quad (c < d) \quad \dots (2)
 $$
 
 $$
-S_{c-a, d-a} = S(c, d, n) \quad (c < d) \tag{2'}
+S_{c-a, d-a} = S(c, d, n) \quad (c < d) \quad \dots (2')
 $$
 
 
@@ -63,7 +63,7 @@ S_k \equiv S(a+k, a+k, n) = \sum_{j=1}^{n-1} \{j(n-j)\}^{a+k} \quad \dots (3)
 $$
 
 $$
-S_{k-a} = S(k, k, n) = \sum_{j=1}^{n-1} \{j(n-j)\}^{k} \tag{3'}
+S_{k-a} = S(k, k, n) = \sum_{j=1}^{n-1} \{j(n-j)\}^{k} \quad \dots (3')
 $$
 
 
@@ -196,71 +196,71 @@ $$
 次数に $1$ の次数の差を与えた非対称和 $S_{0, 1}(n) = \sum_{j=1}^{n-1} j^a (n-j)^{a+1}$ を考える。和のインデックスの対称性（$j \to n-j$）を利用すると、この和は対称核 $S_0(n)$ を用いて次のように評価できる。
 
 $$
-S_{0, 1}(n) = \frac{n}{2} S_0(n) \tag{A.1}
+S_{0, 1}(n) = \frac{n}{2} S_0(n) \quad \dots (A.1)
 $$
 
 次元を $n+1$ に引き上げた $S_{0,1}(n+1)$ について、2つの異なるアプローチで展開を行う。
 第一のアプローチとして、式(A.1)の定義に従ってそのまま次元を上げる。
 
 $$
-S_{0, 1}(n+1) = \frac{n+1}{2} S_0(n+1) = \frac{n+1}{2} \{ S_0(n) + \Delta S_0 \} \tag{A.2}
+S_{0, 1}(n+1) = \frac{n+1}{2} S_0(n+1) = \frac{n+1}{2} \{ S_0(n) + \Delta S_0 \} \quad \dots (A.2)
 $$
 
 第二のアプローチとして、$S_{0, 1}(n+1)$ のシグマ定義式に戻り、括弧内を $(n-j)+1$ と分割して二項展開を行う。
 
 $$
-S_{0, 1}(n+1) = \sum_{j=1}^n j^a \{ (n-j) + 1 \}^{a+1} = \sum_{j=1}^n j^a \sum_{m=0}^{a+1} \binom{a+1}{m} (n-j)^m \tag{A.3}
+S_{0, 1}(n+1) = \sum_{j=1}^n j^a \{ (n-j) + 1 \}^{a+1} = \sum_{j=1}^n j^a \sum_{m=0}^{a+1} \binom{a+1}{m} (n-j)^m \quad \dots (A.3)
 $$
 
 式(A.3)の和の上限 $j=n$ においては、$m=0$ の項のみが生き残り、境界項 $n^a$ を生出する。これを取り出し、残りの和を $S$ の記法で整理する。
 
 $$
-S_{0, 1}(n+1) = n^a + S_{0, 1}(n) + (a+1)S_0(n) + \sum_{m=0}^{a-1} \binom{a+1}{m} S_{m-a, 0}(n) \tag{A.4}
+S_{0, 1}(n+1) = n^a + S_{0, 1}(n) + (a+1)S_0(n) + \sum_{m=0}^{a-1} \binom{a+1}{m} S_{m-a, 0}(n) \quad \dots (A.4)
 $$
 
 ### A.2 次元拡張の方程式と $\Delta S_0$ の抽出
 式(A.2)と式(A.4)は等価である。式(A.4)の $S_{0, 1}(n)$ に式(A.1)を代入して両辺を等置し、両辺を $2$ 倍して整理する。
 
 $$
-(n+1)S_0(n) + (n+1)\Delta S_0 = 2n^a + n S_0(n) + 2(a+1)S_0(n) + 2\sum_{m=0}^{a-1} \binom{a+1}{m} S_{m-a, 0}(n) \tag{A.5}
+(n+1)S_0(n) + (n+1)\Delta S_0 = 2n^a + n S_0(n) + 2(a+1)S_0(n) + 2\sum_{m=0}^{a-1} \binom{a+1}{m} S_{m-a, 0}(n) \quad \dots (A.5)
 $$
 
 両辺から $(n+1)S_0(n)$ を減算することで、階差 $\Delta S_0$ に関する第一の方程式が得られる。
 
 $$
-(n+1)\Delta S_0 = 2n^a + (2a+1)S_0 + 2\sum_{m=0}^{a-1} \binom{a+1}{m} S_{m-a, 0} \tag{A.6}
+(n+1)\Delta S_0 = 2n^a + (2a+1)S_0 + 2\sum_{m=0}^{a-1} \binom{a+1}{m} S_{m-a, 0} \quad \dots (A.6)
 $$
 
 ### A.3 対称核の前進差分に基づく相殺
 式(A.6)には依然として境界項 $2n^a$ が残存している。これを相殺するため、純粋な対称核の前進差分 $\Delta S_0$ そのものを二項展開から直接評価する。
 
 $$
-\Delta S_0 = S_0(n+1) - S_0(n) = \sum_{j=1}^n j^a \{ (n-j) + 1 \}^a - \sum_{j=1}^{n-1} j^a(n-j)^a \tag{A.7}
+\Delta S_0 = S_0(n+1) - S_0(n) = \sum_{j=1}^n j^a \{ (n-j) + 1 \}^a - \sum_{j=1}^{n-1} j^a(n-j)^a \quad \dots (A.7)
 $$
 
 式(A.3)と同様に展開し、$j=n$ の境界項を抽出すると、次の恒等式が得られる。
 
 $$
-\Delta S_0 = n^a + \sum_{m=0}^{a-1} \binom{a}{m} S_{m-a, 0} \tag{A.8}
+\Delta S_0 = n^a + \sum_{m=0}^{a-1} \binom{a}{m} S_{m-a, 0} \quad \dots (A.8)
 $$
 
 両辺を $2$ 倍する。
 
 $$
-2\Delta S_0 = 2n^a + 2\sum_{m=0}^{a-1} \binom{a}{m} S_{m-a, 0} \tag{A.9}
+2\Delta S_0 = 2n^a + 2\sum_{m=0}^{a-1} \binom{a}{m} S_{m-a, 0} \quad \dots (A.9)
 $$
 
 最後に、式(A.6)から式(A.9)を辺々減算する。この操作により、厄介な境界項 $2n^a$ は相殺され消滅する。
 
 $$
-(n-1)\Delta S_0 = (2a+1)S_0 + 2\sum_{m=0}^{a-1} \left\{ \binom{a+1}{m} - \binom{a}{m} \right\} S_{m-a, 0} \tag{A.10}
+(n-1)\Delta S_0 = (2a+1)S_0 + 2\sum_{m=0}^{a-1} \left\{ \binom{a+1}{m} - \binom{a}{m} \right\} S_{m-a, 0} \quad \dots (A.10)
 $$
 
 パスカルの法則 $\binom{a+1}{m} - \binom{a}{m} = \binom{a}{m-1}$ を適用する。（※ $m=0$ のとき $\binom{a}{-1} = 0$ となり初項も消滅する。）
 インデックスを $k = m$ と置き換えることで、本文の第3章で示した基礎漸化式（式5）が証明される。
 
 $$
-(n-1)\Delta S_0 = (2a+1)S_0 + 2\sum_{k=1}^{a-1} \binom{a}{k-1} S_{k-a, 0} \tag{A.11}
+(n-1)\Delta S_0 = (2a+1)S_0 + 2\sum_{k=1}^{a-1} \binom{a}{k-1} S_{k-a, 0} \quad \dots (A.11)
 $$
 
 ---
@@ -273,20 +273,20 @@ $$
 基礎漸化式（式(5) / 式(A.11)）の右辺に含まれる非対称項の和を $\Sigma_{\text{asym}}$ と置く。和のインデックスを $i$ とし、還元公式（式(6)）における一般相対シフトの性質 $S_{0, c} = \frac{1}{2}\sum \mathcal{A}_{c,j}n^{c-2j}S_j$ を用いて $S_{i-a, 0}$（すなわち $S_{0, a-i}$ と等価）を展開すると、以下の二重和が得られる。
 
 $$
-\Sigma_{\text{asym}} = 2 \sum_{i=1}^{a-1} \binom{a}{i-1} \left\{ \frac{1}{2} \sum_{j=0}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S_{i-a+j} \right\} \tag{B.1}
+\Sigma_{\text{asym}} = 2 \sum_{i=1}^{a-1} \binom{a}{i-1} \left\{ \frac{1}{2} \sum_{j=0}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S_{i-a+j} \right\} \quad \dots (B.1)
 $$
 
 係数 $2$ と $\frac{1}{2}$ が相殺される。
 
 $$
-\Sigma_{\text{asym}} = \sum_{i=1}^{a-1} \binom{a}{i-1} \sum_{j=0}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S_{i-a+j} \tag{B.2}
+\Sigma_{\text{asym}} = \sum_{i=1}^{a-1} \binom{a}{i-1} \sum_{j=0}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S_{i-a+j} \quad \dots (B.2)
 $$
 
 ### B.2 主項と交差補正項の分離 ($j=0$ の抽出)
 本理論における引き算のリュカ多項式の役割を明確にするため、内側の和から $j=0$ の項を分離する。式(7)より $\mathcal{A}_{c, 0} = 1$ であることを踏まえ、式(B.2)を2つのパートに分割する。
 
 $$
-\Sigma_{\text{asym}} = \underbrace{ \sum_{i=1}^{a-1} \binom{a}{i-1} n^{a-i} S_{i-a} }_{\text{主項}} + \underbrace{ \sum_{i=1}^{a-1} \binom{a}{i-1} \sum_{j=1}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S_{i-a+j} }_{\text{交差補正項}} \tag{B.3}
+\Sigma_{\text{asym}} = \underbrace{ \sum_{i=1}^{a-1} \binom{a}{i-1} n^{a-i} S_{i-a} }_{\text{主項}} + \underbrace{ \sum_{i=1}^{a-1} \binom{a}{i-1} \sum_{j=1}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S_{i-a+j} }_{\text{交差補正項}} \quad \dots (B.3)
 $$
 
 前半の「主項」は、交差項の干渉を受けない直接的な次元マッピングを表す。一方、後半の「交差補正項」は、係数 $\mathcal{A}_{a-i, j}$ の介入によって交差構造による次元の歪みを精緻に補正し、より高い次元へと分配する役割を担っている。
@@ -296,19 +296,19 @@ $$
 $j = k - i$ を代入して和の順序を入れ替え、各次元の対称核 $S_{k-a}$ を括り出すと次のように整理される。ここで、和の範囲は $1 \le k-i \le \lfloor (a-i)/2 \rfloor$ の制約から $i \ge \max(1, 2k-a)$ と定まる。
 
 $$
-\Sigma_{\text{asym}} = \sum_{k=1}^{a-1} \left( \sum_{i=\max(1, 2k-a)}^{k} \binom{a}{i-1} \mathcal{A}_{a-i, k-i} \cdot n^{a-2k+i} \right) S_{k-a} \tag{B.4}
+\Sigma_{\text{asym}} = \sum_{k=1}^{a-1} \left( \sum_{i=\max(1, 2k-a)}^{k} \binom{a}{i-1} \mathcal{A}_{a-i, k-i} \cdot n^{a-2k+i} \right) S_{k-a} \quad \dots (B.4)
 $$
 
 括弧内の係数群に対し、式(7)の定義式 $\mathcal{A}_{a-i, k-i} = (-1)^{k-i} \frac{a-i}{a-k} \binom{a-k}{k-i}$ を代入する。
 
 $$
-C_k(n) = \sum_{i=\max(1, 2k-a)}^{k} \binom{a}{i-1} \left\{ (-1)^{k-i} \frac{a-i}{a-k} \binom{a-k}{k-i} \right\} n^{a-2k+i} \tag{B.5}
+C_k(n) = \sum_{i=\max(1, 2k-a)}^{k} \binom{a}{i-1} \left\{ (-1)^{k-i} \frac{a-i}{a-k} \binom{a-k}{k-i} \right\} n^{a-2k+i} \quad \dots (B.5)
 $$
 
 これを代数的に整理することで、本文の式(8)である明示公式が導出される。
 
 $$
-C_k(n) = \frac{1}{a-k} \sum_{i=\max(1, 2k-a)}^{k} (-1)^{k-i} (a-i) \binom{a}{i-1} \binom{a-k}{k-i} n^{a-2k+i} \tag{B.6}
+C_k(n) = \frac{1}{a-k} \sum_{i=\max(1, 2k-a)}^{k} (-1)^{k-i} (a-i) \binom{a}{i-1} \binom{a-k}{k-i} n^{a-2k+i} \quad \dots (B.6)
 $$
 
 ---
