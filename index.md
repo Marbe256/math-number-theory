@@ -28,3 +28,4 @@ title: Mathematical Number Theory
 - **[有限べき乗和の解析的拡張と代数的構造（非対称核から対称核へ変換・逆変換）](algebraic_structure_of_S_abn.md)** (2026/03/03)
 - **[有限べき乗和の解析的拡張 (実数・負数・複素数)](analytical_extension_of_generalized_finite_sum_S_abn.md)** (2026/03/03)
 - **[有限べき乗和の解析的操作：(微分積分および積分変換)](analytical_extension_of_S_abn.md)** (2026/03/03)
+- **[有限べき乗和の解析的差分演算手順および構造分解](analytical_difference_sum.md)** (2026/03/03)

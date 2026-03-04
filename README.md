@@ -18,6 +18,7 @@
 - **[有限べき乗和の解析的拡張と代数的構造](algebraic_structure_of_S_abn.md)**: 非対称核から対称核への変換・逆変換の代数学。
 - **[有限べき乗和の解析的拡張 (実数・負数・複素数)](analytical_extension_of_generalized_finite_sum_S_abn.md)**: $n$ および指数 $a,b$ の複素領域への拡張。
 - **[有限べき乗和の解析的操作：微分積分および積分変換](analytical_extension_of_S_abn.md)**: 解析的なアプローチによる和の性質の解明。
+- **[有限べき乗和の解析的差分演算手順および構造分解](analytical_difference_sum.md)**: 有限べき乗和の解析的差分演算手順および構造分解。
 
 ### 3. ドキュメント・公式集 (Data & Formulas)
 - **[多項式差分の連鎖分割公式集 (c=3 ～ c=23)](S0_Chain_3-23.md)**: 中心対称な偶数次基底に集約した凝縮形式の公式。
