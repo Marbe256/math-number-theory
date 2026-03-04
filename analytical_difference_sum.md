@@ -22,7 +22,7 @@ $$
 第一項の和から $j=n$ の項を分離し、和の範囲を $j=1$ から $n-1$ までに揃えることで、差分演算をシグマの内部へ移行する。
 
 $$
-\Delta S(a, b, n) = n^a + \sum_{j=1}^{n-1} j^a \left\{ (n+1-j)^b - (n-j)^b \right\} \quad \dots (3)
+\Delta S(a, b, n) = n^a + \sum_{j=1}^{n-1} j^a \biggl( (n+1-j)^b - (n-j)^b \biggr) \quad \dots (3)
 $$
 
 式(3)内の波括弧部分に対して二項定理を適用し展開する。最高次の項が相殺され、 $k$ について $0$ から $b-1$ までの和に帰着する。これを元のシグマと交換することにより、次の漸化式が得られる。
@@ -43,7 +43,7 @@ $$
 式(4)の両辺に対して2回目の差分演算子 $\Delta$ を作用させ、第2階差分 $\Delta^2 S(a, b, n)$ を構成する。右辺の $\Delta S(a, k_1, n)$ に対して再び式(4)の漸化式を適用することで、次式を得る。
 
 $$
-\Delta^2 S(a, b, n) = \Delta(n^a) + \sum_{k_1=0}^{b-1} \binom{b}{k_1} \left\{ n^a + \sum_{k_2=0}^{k_1-1} \binom{k_1}{k_2} S(a, k_2, n) \right\} \quad \dots (5)
+\Delta^2 S(a, b, n) = \Delta(n^a) + \sum_{k_1=0}^{b-1} \binom{b}{k_1} \biggl( n^a + \sum_{k_2=0}^{k_1-1} \binom{k_1}{k_2} S(a, k_2, n) \biggr) \quad \dots (5)
 $$
 
 階数 $m$ が増加する過程は、多項式項が系外へ抽出されるプロセスと、シグマ内部のパラメータが $b \to k_1 \to k_2 \dots$ と連鎖的に降下するプロセスの再帰構造となる。
@@ -188,8 +188,8 @@ $$
 
 $$
 \begin{aligned} 
-\sum_{k=0}^{b} \binom{b+2}{k} S(a+1, k, n) & = \sum_{k=0}^{b} \binom{b+2}{k} \left\{ \sum_{j=1}^{n-1} j^{a+1} (n-j)^k \right\} \\ 
-& = \sum_{j=1}^{n-1} (n-j)^{a+1} \left\{ \sum_{k=0}^{b} \binom{b+2}{k} j^k \right\} 
+\sum_{k=0}^{b} \binom{b+2}{k} S(a+1, k, n) & = \sum_{k=0}^{b} \binom{b+2}{k} \biggl( \sum_{j=1}^{n-1} j^{a+1} (n-j)^k \biggr) \\ 
+& = \sum_{j=1}^{n-1} (n-j)^{a+1} \biggl( \sum_{k=0}^{b} \binom{b+2}{k} j^k \biggr) 
 \end{aligned} \quad \dots (23)
 $$
 
@@ -221,7 +221,7 @@ $$
 
 $$
 \begin{aligned} 
-\Delta S(a+1, b+2, n) = \,\, & \left\{ n^{a+1} + \sum_{j=1}^{n-1} j^{a+1} (n+1-j)^{b+2} \right\} - S(b+2, a+1, n) \\ 
+\Delta S(a+1, b+2, n) = \,\, & \biggl( n^{a+1} + \sum_{j=1}^{n-1} j^{a+1} (n+1-j)^{b+2} \biggr) - S(b+2, a+1, n) \\ 
 = \,\, & S(a+1, b+2, n+1) - S(a+1, b+2, n) 
 \end{aligned} \quad \dots (26)
 $$
