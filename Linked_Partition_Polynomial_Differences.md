@@ -60,7 +60,7 @@ $$
 対称核は本理論の基本基底となるため、引数 $n$ に依存する関数であることを前提としつつ、基準次元 $a$ に対する相対シフト $k$ を用いた省略記法 $S_k$ を以下のように定義する。
 
 $$
-S_k \equiv S(a+k, a+k, n) = \sum_{j=1}^{n-1} \big(j(n-j)\big)^{a+k} \quad \dots (3)
+S_k \equiv S(a+k, a+k, n) = \sum_{j=1}^{n-1} \lbrace j(n-j)\rbrace ^{a+k} \quad \dots (3)
 $$
 
 $$
