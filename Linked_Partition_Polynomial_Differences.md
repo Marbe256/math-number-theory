@@ -1,7 +1,7 @@
 # 多項式階差における連鎖分割理論：非対称和の純粋対称核への還元と一般化漸化式の導出
 (Theory of Linked Partitions in Polynomial Differences: Reducing Asymmetric Sums and Deriving Generalized Recurrences)
 
-日付：2026/03/04
+日付：2026/03/03
 
 著者：Masatoyo Masuda
 
@@ -272,23 +272,27 @@ $$
 本付録では、主定理の多項式係数 $C_k(n)$ が、基礎漸化式の右辺に残存する非対称和群からどのように抽出され、再構築されるかの代数的プロセスを詳述する。
 
 ### B.1 還元公式の適用と二重和の形成
-基礎漸化式（式(5) / 式(A.11)）の右辺に含まれる非対称項の和を $\Sigma_{\text{asym}}$ と置く。和のインデックスを $i$ とし、還元公式（式(6)）における一般相対シフトの性質を用いて $S_{i-a, 0}$ （すなわち $S_{0, a-i}$ と等価）を展開すると、以下の二重和が得られる。
+基礎漸化式（式(5) / 式(A.11)）の右辺に含まれる非対称項 $S_{i-a, 0} = S(i, a, n)$ を考える。和のインデックスの対称性（ $j \to n-j$ ）により、これは $S(a, i, n)$ と等価である。ここで、低い方の次数 $i$ を基点とし、高い方の次数 $a$ との差を $c = a-i$ （ $c \ge 1$ ）と定義して還元公式（式6）を適用する。これにより、非対称項は以下のように純粋な対称核の線形結合へと展開される。
+
+$$S(i, a, n) = \frac{1}{2} \sum_{j=0}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S(i+j, i+j, n) \quad \dots (B.1)$$
+
+ここで、右辺の対称核 $S(i+j, i+j, n)$ を基準次元 $a$ に対する相対表記 $S_{k-a}$ に書き換えるため、 $k = i+j$ と置く。このとき、 $S(i+j, i+j, n) = S_{i-a+j}$ となり、基礎漸化式の右辺の和 $\Sigma_{\text{asym}}$ は以下の二重和として再構成される。
 
 $$
-\Sigma_{\text{asym}} = 2 \sum_{i=1}^{a-1} \binom{a}{i-1} \biggl( \frac{1}{2} \sum_{j=0}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S_{i-a+j} \biggr) \quad \dots (B.1)
+\Sigma_{\text{asym}} = 2 \sum_{i=1}^{a-1} \binom{a}{i-1} \biggl( \frac{1}{2} \sum_{j=0}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S_{i-a+j} \biggr) \quad \dots (B.2)
 $$
 
 係数 $2$ と $\frac{1}{2}$ が相殺される。
 
 $$
-\Sigma_{\text{asym}} = \sum_{i=1}^{a-1} \binom{a}{i-1} \sum_{j=0}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S_{i-a+j} \quad \dots (B.2)
+\Sigma_{\text{asym}} = \sum_{i=1}^{a-1} \binom{a}{i-1} \sum_{j=0}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S_{i-a+j} \quad \dots (B.3)
 $$
 
 ### B.2 主項と交差補正項の分離 ( $j=0$ の抽出)
 本理論における引き算のリュカ多項式の役割を明確にするため、内側の和から $j=0$ の項を分離する。式(7)より $\mathcal{A}_{c, 0} = 1$ であることを踏まえ、式(B.2)を2つのパートに分割する。
 
 $$
-\Sigma_{\text{asym}} = \underbrace{ \sum_{i=1}^{a-1} \binom{a}{i-1} n^{a-i} S_{i-a} }_{\text{主項}} + \underbrace{ \sum_{i=1}^{a-1} \binom{a}{i-1} \sum_{j=1}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S_{i-a+j} }_{\text{交差補正項}} \quad \dots (B.3)
+\Sigma_{\text{asym}} = \underbrace{ \sum_{i=1}^{a-1} \binom{a}{i-1} n^{a-i} S_{i-a} }_{\text{主項}} + \underbrace{ \sum_{i=1}^{a-1} \binom{a}{i-1} \sum_{j=1}^{\lfloor (a-i)/2 \rfloor} \mathcal{A}_{a-i, j} \cdot n^{a-i-2j} \cdot S_{i-a+j} }_{\text{交差補正項}} \quad \dots (B.4)
 $$
 
 前半の「主項」は、交差項の干渉を受けない直接的な次元マッピングを表す。一方、後半の「交差補正項」は、係数 $\mathcal{A}_{a-i, j}$ の介入によって交差構造による次元の歪みを精緻に補正し、より高い次元へと分配する役割を担っている。
@@ -298,19 +302,19 @@ $$
 $j = k - i$ を代入して和の順序を入れ替え、各次元の対称核 $S_{k-a}$ を括り出すと次のように整理される。ここで、和の範囲は $1 \le k-i \le \lfloor (a-i)/2 \rfloor$ の制約から $i \ge \max(1, 2k-a)$ と定まる。
 
 $$
-\Sigma_{\text{asym}} = \sum_{k=1}^{a-1} \biggl( \sum_{i=\max(1, 2k-a)}^{k} \binom{a}{i-1} \mathcal{A}_{a-i, k-i} \cdot n^{a-2k+i} \biggr) S_{k-a} \quad \dots (B.4)
+\Sigma_{\text{asym}} = \sum_{k=1}^{a-1} \biggl( \sum_{i=\max(1, 2k-a)}^{k} \binom{a}{i-1} \mathcal{A}_{a-i, k-i} \cdot n^{a-2k+i} \biggr) S_{k-a} \quad \dots (B.5)
 $$
 
 括弧内の係数群に対し、式(7)の定義式 $\mathcal{A}_{a-i, k-i} = (-1)^{k-i} \frac{a-i}{a-k} \binom{a-k}{k-i}$ を代入する。
 
 $$
-C_k(n) = \sum_{i=\max(1, 2k-a)}^{k} \binom{a}{i-1} \biggl( (-1)^{k-i} \frac{a-i}{a-k} \binom{a-k}{k-i} \biggr) n^{a-2k+i} \quad \dots (B.5)
+C_k(n) = \sum_{i=\max(1, 2k-a)}^{k} \binom{a}{i-1} \biggl( (-1)^{k-i} \frac{a-i}{a-k} \binom{a-k}{k-i} \biggr) n^{a-2k+i} \quad \dots (B.6)
 $$
 
 これを代数的に整理することで、本文の式(8)である明示公式が導出される。
 
 $$
-C_k(n) = \frac{1}{a-k} \sum_{i=\max(1, 2k-a)}^{k} (-1)^{k-i} (a-i) \binom{a}{i-1} \binom{a-k}{k-i} n^{a-2k+i} \quad \dots (B.6)
+C_k(n) = \frac{1}{a-k} \sum_{i=\max(1, 2k-a)}^{k} (-1)^{k-i} (a-i) \binom{a}{i-1} \binom{a-k}{k-i} n^{a-2k+i} \quad \dots (B.7)
 $$
 
 ---
