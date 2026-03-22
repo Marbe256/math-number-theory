@@ -9,6 +9,7 @@ title: Mathematical Number Theory
 - **[有限べき乗和の対称核分解と変形チェビシェフ多項式との関係](finite_power_sum.md)** (2026/1/29)
 - **[多項式差分におけるパリティ制限付き連鎖分割理論：対称べき乗和からジェノッキ数へ](parity_restricted_linked_partitions.md)** (2026/02/26)
 - **[多項式階差における連鎖分割理論：非対称和の純粋対称核への還元と一般化漸化式の導出](Linked_Partition_Polynomial_Differences.md)** (2026/03/03)
+- **[非対称べき乗和の連鎖分割：反対称性に基づく係数の代数的生成](linked_partition_asymmetric_power_sums.md)** (2026/03/11)
 - **[パリティ制限付き連鎖分割の経路和から創発するオイラー数](PRCP_pass_sum_1.md)** (2026/03/21)
 - **[パリティ制限付き連鎖分割における係数漸化式と大域的均衡](PRCP_pass_sum_2.md)** (2026/03/21)
 
@@ -18,7 +19,7 @@ title: Mathematical Number Theory
 - **[多項式差分の連鎖分割公式集 (c=3 ～ c=23)](S0_Chain_3-23.md)** (2026/03/03)
 - [和の公式集 (基本)](summation_formulas.md)
 - **[有限べき乗和の対称核分解](S0cSk.md)**
-- **[対称核 $S_m$ の非対称和展開多項式一覧](SmS0c.md)**
+- **[対称核の非対称和展開多項式一覧](SmS0c.md)**
 - べき乗式集 ( $n^3 - n^{12}$): [npower.md](npower.md)
 - べき乗式集 ( $n^{13} - n^{29}$): [npower2.md](npower2.md)
 - べき乗式集 対称和形式 ( $n^{3} - n^{29}$): [npowerS.md](npowerS.md)
