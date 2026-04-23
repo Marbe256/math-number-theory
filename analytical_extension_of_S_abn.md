@@ -32,7 +32,7 @@ $$\frac{\partial}{\partial a} B(a+1, b+1) = B(a+1, b+1) (\psi(a+1) - \psi(a+b+2)
 
 積の微分法則を適用することで、式(2)の偏微分は次のように整理される。
 
-$$\frac{\partial}{\partial a} S_{cont}(a, b, x) = S_{cont}(a, b, x) \left( \ln x + \psi(a+1) - \psi(a+b+2) \right) \quad \dots (5)$$
+$$\frac{\partial}{\partial a} S_{cont}(a, b, x) = S_{cont}(a, b, x) \big( \ln x + \psi(a+1) - \psi(a+b+2) \big) \quad \dots (5)$$
 
 式(5)は、離散和における対数項の生成（式3）の極限的振る舞いが、連続領域においては対数関数 $\ln x$ およびディガンマ関数 $\psi$ の加法的な補正項として評価される構造を示している。
 
@@ -74,9 +74,9 @@ $$\int S_{cont}(a, b, x) dx = \frac{1}{a+b+2} x^{a+b+2} B(a+1, b+1) + C \quad \d
 
 $$(f * g)(t) = \int_{0}^{t} x^a (t-x)^b dx = S_{cont}(a, b, t) \quad \dots (9)$$
 
-ラプラス変換の畳み込み定理 $\mathcal{L}\{f * g\} = \mathcal{L}\{f\} \cdot \mathcal{L}\{g\}$ を適用すると、変換空間においてこの積分は純粋な積に分解される。
+ラプラス変換の畳み込み定理 $\mathcal{L}(f * g) = \mathcal{L}(f) \cdot \mathcal{L}(g)$ を適用すると、変換空間においてこの積分は純粋な積に分解される。
 
-$$\mathcal{L}\{S_{cont}\}(s) = \frac{\Gamma(a+1)}{s^{a+1}} \cdot \frac{\Gamma(b+1)}{s^{b+1}} = \frac{\Gamma(a+1)\Gamma(b+1)}{s^{a+b+2}} \quad \dots (10)$$
+$$\mathcal{L}(S_{cont})(s) = \frac{\Gamma(a+1)}{s^{a+1}} \cdot \frac{\Gamma(b+1)}{s^{b+1}} = \frac{\Gamma(a+1)\Gamma(b+1)}{s^{a+b+2}} \quad \dots (10)$$
 
 
 
@@ -111,22 +111,26 @@ $$G(z) = \sum_{n=1}^{\infty} S(a, b, n) z^n = \text{Li}_{-a}(z) \cdot \text{Li}_
 
 離散的な非対称和 $S(a, b, n) = \sum_{j=1}^{n-1} j^a (n-j)^b$ の連続限界は、以下の定積分 $I(a, b, n)$ として定義される。
 
-$$I(a, b, n) = \int_0^n x^a (n-x)^b dx \tag{A.1}$$
+<!-- $$I(a, b, n) = \int_0^n x^a (n-x)^b dx \tag{A.1}$$ -->
+$$I(a, b, n) = \int_0^n x^a (n-x)^b dx \quad \dots (A.1)$$
 
 関数 $f(t) = t^a$ および $g(t) = t^b$ とおくと、上式は時間領域（空間領域）における畳み込み積分（Convolution）の形式 $(f * g)(n)$ と完全に一致する。
-この積分を直接評価する代わりに、ラプラス変換 $\mathcal{L}$ を適用し、畳み込みの定理 $\mathcal{L}\{(f * g)(t)\} = F(s)G(s)$ を用いてs領域へと写像する。
+この積分を直接評価する代わりに、ラプラス変換 $\mathcal{L}$ を適用し、畳み込みの定理 $\mathcal{L}((f * g)(t)) = F(s)G(s)$ を用いてs領域へと写像する。
 
-基本関数のラプラス変換 $\mathcal{L}\{t^k\} = \frac{k!}{s^{k+1}}$ を適用すると、s領域における積は以下のように簡略化される。
+基本関数のラプラス変換 $\mathcal{L}(t^k) = \frac{k!}{s^{k+1}}$ を適用すると、s領域における積は以下のように簡略化される。
 
-$$F(s)G(s) = \frac{a!}{s^{a+1}} \cdot \frac{b!}{s^{b+1}} = \frac{a! b!}{s^{a+b+2}} \tag{A.2}$$
+<!-- $$F(s)G(s) = \frac{a!}{s^{a+1}} \cdot \frac{b!}{s^{b+1}} = \frac{a! b!}{s^{a+b+2}} \tag{A.2}$$ -->
+$$F(s)G(s) = \frac{a!}{s^{a+1}} \cdot \frac{b!}{s^{b+1}} = \frac{a! b!}{s^{a+b+2}} \quad \dots (A.2)$$
 
-これを逆ラプラス変換 $\mathcal{L}^{-1}$ を用いて元の $n$ 領域へ戻す。公式 $\mathcal{L}^{-1} \left\{ \frac{1}{s^{K+1}} \right\} = \frac{n^K}{K!}$ に対し $K = a+b+1$ を適用すると、以下の連続極限の厳密解が得られる。
+これを逆ラプラス変換 $\mathcal{L}^{-1}$ を用いて元の $n$ 領域へ戻す。公式 $\mathcal{L}^{-1} \big ( \frac{1}{s^{K+1}} \big ) = \frac{n^K}{K!}$ に対し $K = a+b+1$ を適用すると、以下の連続極限の厳密解が得られる。
 
-$$I(a, b, n) = \frac{a! b!}{(a+b+1)!} n^{a+b+1} \tag{A.3}$$
+<!-- $$I(a, b, n) = \frac{a! b!}{(a+b+1)!} n^{a+b+1} \tag{A.3}$$ -->
+$$I(a, b, n) = \frac{a! b!}{(a+b+1)!} n^{a+b+1} \quad \dots (A.3)$$
 
 ここで、対称核 $S_k$ に対応する $a=k, b=k$ を代入すると、
 
-$$I(k, k, n) = \frac{(k!)^2}{(2k+1)!} n^{2k+1} \tag{A.4}$$
+<!-- $$I(k, k, n) = \frac{(k!)^2}{(2k+1)!} n^{2k+1} \tag{A.4}$$ -->
+$$I(k, k, n) = \frac{(k!)^2}{(2k+1)!} n^{2k+1} \quad \dots (A.4)$$
 
 となる。この係数 $\frac{(k!)^2}{(2k+1)!}$ は、第4章で導出された離散スケーリング公式の最高次係数と完全に一致する。すなわち、連鎖分割理論における係数構造は、畳み込みのラプラス変換という解析的必然から生じていることが証明された。
 
@@ -134,13 +138,15 @@ $$I(k, k, n) = \frac{(k!)^2}{(2k+1)!} n^{2k+1} \tag{A.4}$$
 
 次に、対称核の次元 $k$ が無限大に近づく（$k \to \infty$）際の振る舞いを評価する。対称核の連続限界 $I_k$ を指数関数を用いて書き換える。
 
-$$I_k = \int_0^n (x(n-x))^k dx = \int_0^n e^{k \ln(x(n-x))} dx \tag{A.5}$$
+<!-- $$I_k = \int_0^n (x(n-x))^k dx = \int_0^n e^{k \ln(x(n-x))} dx \tag{A.5}$$ -->
+$$I_k = \int_0^n (x(n-x))^k dx = \int_0^n e^{k \ln(x(n-x))} dx \quad \dots (A.5)$$
 
-位相関数を $h(x) = \ln(x(n-x))$ と定義する。微分により $h'(x) = \frac{n-2x}{x(n-x)}$ となり、$h(x)$ は区間の中点 $x_0 = \frac{n}{2}$ において唯一の最大値 $h(x_0) = \ln\left(\frac{n^2}{4}\right)$ をとる。また、二次微分は $h''(x_0) = -\frac{8}{n^2}$ となる。
+位相関数を $h(x) = \ln(x(n-x))$ と定義する。微分により $h'(x) = \frac{n-2x}{x(n-x)}$ となり、$h(x)$ は区間の中点 $x_0 = \frac{n}{2}$ において唯一の最大値 $h(x_0) = \ln\big(\frac{n^2}{4}\big)$ をとる。また、二次微分は $h''(x_0) = -\frac{8}{n^2}$ となる。
 
 $k \to \infty$ の極限において、積分は最大値 $x_0 = \frac{n}{2}$ の近傍のみで支配的になる。ラプラスの方法（Saddle-point approximation）を適用すると、$I_k$ は以下のガウス積分に漸近評価される。
 
-$$I_k \approx e^{k h(x_0)} \int_{-\infty}^{\infty} e^{\frac{1}{2} k h''(x_0) (x - x_0)^2} dx = \left(\frac{n^2}{4}\right)^k \sqrt{\frac{2\pi}{-k h''(x_0)}} = \left(\frac{n^2}{4}\right)^k \frac{n \sqrt{\pi}}{2 \sqrt{k}} \tag{A.6}$$
+<!-- $$I_k \approx e^{k h(x_0)} \int_{-\infty}^{\infty} e^{\frac{1}{2} k h''(x_0) (x - x_0)^2} dx = \big(\frac{n^2}{4}\right)^k \sqrt{\frac{2\pi}{-k h''(x_0)}} = \big(\frac{n^2}{4}\right)^k \frac{n \sqrt{\pi}}{2 \sqrt{k}} \tag{A.6}$$ -->
+$$I_k \approx e^{k h(x_0)} \int_{-\infty}^{\infty} e^{\frac{1}{2} k h''(x_0) (x - x_0)^2} dx = \big(\frac{n^2}{4}\big)^k \sqrt{\frac{2\pi}{-k h''(x_0)}} = \big(\frac{n^2}{4}\big)^k \frac{n \sqrt{\pi}}{2 \sqrt{k}} \quad \dots (A.6)$$
 
 この結果は、次元 $k$ の上昇に伴い、被積分関数が $x = 0.5n$ を中心とする分散 $\sigma^2 = \frac{n^2}{8k}$ の正規分布へと鋭く局在化していくことを示している。
 これは、離散系における代数フィルターの特異点（ピボット $j_{S_k}$）が、次元の上昇とともに総和区間の中心 $0.5n$ へと急激に収束（$S_1(0.707n) \to S_4(0.501n)$）した代数的現象を、解析学の観点から裏付けるものである。
