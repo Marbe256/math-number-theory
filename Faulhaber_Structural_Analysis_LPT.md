@@ -1,3 +1,4 @@
+
 # Algebraic Generation of Bernoulli Numbers via Linked Partition Theory of Polynomial Differences: Structural Analysis of Faulhaber's Formula through Layered Coefficients
 
 **多項式差分の連鎖分割理論によるベルヌーイ数の代数的生成：階層係数によるファウルハーバー公式の構造解析**
