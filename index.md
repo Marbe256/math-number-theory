@@ -12,6 +12,11 @@ title: Mathematical Number Theory
 - **[非対称べき乗和の連鎖分割：反対称性に基づく係数の代数的生成](linked_partition_asymmetric_power_sums.md)** (2026/03/11)
 - **[パリティ制限付き連鎖分割の経路和から創発するオイラー数](PRCP_pass_sum_1.md)** (2026/03/21)
 - **[パリティ制限付き連鎖分割における係数漸化式と大域的均衡](PRCP_pass_sum_2.md)** (2026/03/21)
+- **[多項式差分の連鎖分割と双曲線関数の対応に基づく非正則素数の評価手法と計算量 $O(p \log p)$ アルゴリズムの提案](an_evo_method_irregular_prime_LP.md)** (2026/05/06)
+- **[多項式差分の連鎖分割理論と普遍定数：階層推移方程式から導かれるジェノッキ数の構造](Linked_Partition_Theory_of_Polynomial_Differences.md)** (2026/05/11)
+- **[多項式差分における連鎖分割理論と畳み込みべき乗和の代数構造](Algebraic_Structure_Convolutional_Power_Sums.md)** (2026/05/27)
+- **[多項式階差における連鎖分割の理論：離散畳み込み和のパリティ・バイパス則と次元半減](Parity_Bypass_and_Dimension_Halving_LP.md)** (2026/05/27)
+- **[有限べき乗和の対称核分解におけるウェアリングの公式の適用と被加数構造](finite_power_sum_warings_formula.md)** (2026/09/23)
 
 ## ドキュメント
 
