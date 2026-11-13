@@ -5,19 +5,19 @@
 - Masatoyo Matsuda
 
 ## 概要 (Abstract)
-本論文では、有理数演算を回避し、多項式差分の連鎖分割から導出される漸化式を用いた非正則素数の評価手法を提案する。有限べき乗和の係数を決定する漸化式が、双曲線関数のマクローリン展開における恒等式と対応することを示し、これを形式的べき級数の畳み込みとして定式化する。さらに、任意模数数論変換（NTT）とモジュロ空間の次元降下を適用することで、特異点における計算不能状態を回避しつつ、時間計算量 $O(p \log p)$ で非正則素数および高次 $p$-進展開係数を抽出するアルゴリズムを構築する。従来手法が有理数演算の制約や $O(p^2)$ の時間計算量に依存するのに対し、本手法は理論面で有理数を排除する代数構造を持ち、アルゴリズム面で計算量を対数線形へと削減する点で優位性を持つ。
+本論文では、有理数演算を回避し、多項式差分の連鎖分割から導出される漸化式を用いた非正則素数の評価手法を提案する。有限べき乗和の係数を決定する漸化式が、双曲線関数のマクローリン展開における恒等式と対応することを示し、これを形式的べき級数の畳み込みとして定式化する。さらに、任意模数数論変換（NTT）とモジュロ空間の次元降下を適用することで、特異点における計算不能状態を回避しつつ、時間計算量 $O(p \log p)$ で非正則素数および高次 $p$-進展開係数を抽出するアルゴリズムを構築する。本手法の計算量は、既存の準線形アルゴリズム（べき級数法、ボロノイ型合同式に基づく方法）と同程度である。本手法の特徴は、その計算構造を連鎖分割の理論から導く点、および個々の素数について $B_k$ の高次 $p$-進展開係数を抽出する点にある。
 
 ## 第1章：序論 (Chapter 1: Introduction)
 
-非正則素数（irregular primes）の分布や性質の解明は、代数的整数論において継続的な研究対象である。素数 $p$ が非正則であるか否かの判定は、ベルヌーイ数 $B_ k$ の分子が $p$ で割り切れるかどうかに依存する。しかし、ベルヌーイ数は有理数であり、フォン・シュタウト＝クラウゼンの定理（von Staudt-Clausen theorem）により、特定のインデックスにおいてその分母は $p$ を素因数として含む。この性質は、計算機上で高次の剰余環 $\mathbb{Z}/p^n\mathbb{Z}$ を用いてベルヌーイ数を直接評価する際の制約となる。
+非正則素数（irregular primes）の分布や性質の解明は、代数的整数論において継続的な研究対象である。素数 $p$ が非正則であるか否かの判定は、ベルヌーイ数 $B_ k$ の分子が $p$ で割り切れるかどうかに依存する。ベルヌーイ数は有理数であり、その分母はフォン・シュタウト＝クラウゼンの定理（von Staudt-Clausen theorem）[3, 4] によって定まる。分母に $p$ が含まれるのは $p-1 \mid k$ の場合に限られるため、非正則性の判定に必要な $2 \le k \le p-3$ の範囲では、$B_k$ は剰余環 $\mathbb{Z}/p^n\mathbb{Z}$ の元として扱うことができる。
 
-従来の大規模な非正則素数の探索としては、Hart, Harvey, Ong (2017) により $p < 2^{31}$ までの計算が達成されている。彼らの手法は時間計算量 $O(p \log^2 p)$ であり効率的であるが、その評価空間は第一次の非正則性（ $B_ k \equiv 0 \pmod p$ ）に限定されている。一方、超非正則素数（ $B_ k \equiv 0 \pmod{p^2}$ ）やさらに高次の $p$-進展開係数に関する計算は、Kellner (2007) による研究が存在するものの、有理数演算の計算機的制約からその評価範囲は $p < 1000$ に留まっているのが現状である。
+大規模な非正則素数の探索には、ベルヌーイ数に関係する級数を法 $p$ で逆元にするべき級数法 [12] と、ボロノイ型の合同式を畳み込みとして計算する方法 [8, 13] がある。いずれも準線形の計算量を持ち（[13] では $O(p \log^{2+\varepsilon} p)$ とされる）、Hart, Harvey, Ong [9] により $p < 2^{31}$ までの計算が達成されている。[9] では、非正則指数の決定に加えて、Kummer–Vandiver 予想の検証と、岩澤不変量について $\lambda_p = \nu_p = i_p$ の確認も行われている。また [13] では、非正則ペアごとに法 $p^2$ の合同式を確かめ、$B_k \not\equiv 0 \pmod{p^2}$ であることを示している。一方、Kellner [11] は、$p < 1000$ の非正則ペアについて、$B_m/m \equiv 0 \pmod{p^r}$ の解が定める $p$ 進数の展開を計算している。
 
-本研究の目的は、多項式差分の連鎖分割から得られる漸化式の解析的構造を解明し、それに基づく時間計算量 $O(p \log p)$ の評価アルゴリズムを提案することである。本手法は従来法に対し、理論およびアルゴリズムの双方で以下の優位性を持つ。
+本研究の目的は、多項式差分の連鎖分割から得られる漸化式の解析的構造を解明し、それに基づく時間計算量 $O(p \log p)$ の評価アルゴリズムを提案することである。本手法の特徴は、理論およびアルゴリズムの双方において次のとおりである。
 
-理論面においては、離散的な多項式係数の漸化式が連続的な双曲線関数の恒等式に対応することを示し、漸化式の計算を形式的べき級数（FPS）の畳み込みへ帰着させる。この代数構造への写像により、フォン・シュタウト＝クラウゼンの特異点に起因する有理数演算を回避する。
+理論面においては、離散的な多項式係数の漸化式が連続的な双曲線関数の恒等式に対応することを示し、漸化式の計算を形式的べき級数（FPS）の畳み込みへ帰着させる。この写像により、係数の計算を剰余環 $\mathbb{Z}/p^n\mathbb{Z}$ 上の整数演算として行うことができる。
 
-アルゴリズム面においては、この理論的対応を基盤とし、任意模数数論変換（Arbitrary Modulo NTT）およびニュートン法による逆元計算を導入することで、係数評価の計算量を従来手法の $O(p \log^2 p)$ から $O(p \log p)$ へと削減する。さらに、モジュロ空間の次元降下（dimensional descent）機構を設けることで、ウィーフェリッヒ素数などの特異点においても偽陽性を数論的に排除し、Kellnerの探索限界を超える巨大素数の高次モジュロ空間において、決定論的に $p$-進展開係数を抽出可能とする。
+アルゴリズム面においては、この理論的対応を基盤とし、任意模数数論変換（Arbitrary Modulo NTT）およびニュートン法による逆元計算を導入する。計算量は語演算の回数で $O(p \log p)$ 程度であり、既存の準線形アルゴリズムと同程度である。本手法はジェノッキ数 $G_k = 2(1-2^k)B_k$ を経由するため、$2^k \equiv 1 \pmod p$ となる $k$ では $B_k$ によらず値が $0$ となる特異点が生じる。これは [9] において $c$ の位数で割り切れる添字を別に扱う必要があったことと同種のものであり、本手法ではモジュロ空間の次元降下（dimensional descent）によってこれを扱う。この機構により、個々の素数について、高次のモジュロ空間 $\mathbb{Z}/p^n\mathbb{Z}$ で $B_k$ の $p$-進展開係数を決定論的に抽出する。
 
 ## 第2章：連鎖分割漸化式の解析的構造 (Chapter 2: Analytic Structure of Linked Partition Recurrences)
 
@@ -228,13 +228,13 @@ $p = 1093$ は正則素数（regular prime）であるが、特定のインデ�
 
 ## 第6章：結論 (Chapter 6: Conclusion)
 
-本論文では、多項式差分の連鎖分割から得られる漸化式の解析的構造を解明し、それに準拠する非正則素数の評価手法および時間計算量 $O(p \log p)$ のアルゴリズムを提案した。
+本論文では、多項式差分の連鎖分割から得られる漸化式の解析的構造を解明し、それに準拠する非正則素数の評価手法と、時間計算量 $O(p \log p)$ 程度（既存の準線形アルゴリズムと同程度）のアルゴリズムを提案した。
 
-理論面においては、有限べき乗和の係数遷移が双曲線関数の恒等式に対応することを示し、漸化式の計算を形式的べき級数の畳み込みへ帰着させた。この構造により、ベルヌーイ数の有理数演算に起因する計算機的制約を回避する代数基盤が構築された。
+理論面においては、有限べき乗和の係数遷移が双曲線関数の恒等式に対応することを示し、漸化式の計算を形式的べき級数の畳み込みへ帰着させた。この構造により、係数の計算を剰余環 $\mathbb{Z}/p^n\mathbb{Z}$ 上の整数演算として行う代数基盤が得られた。
 
 アルゴリズム面においては、任意模数数論変換（NTT）を剰余環 $\mathbb{Z}/p^n\mathbb{Z}$ へ適用し、多項式乗算を対数線形時間で処理する機構を実装した。また、特異点において発生する偽陽性を分離するため、 $p$-進付値に基づく次元降下ロジックを導入した。
 
-計算機的実証により、本手法が特異点における判定を維持し、従来手法では到達が困難であった巨大素数（ $p=100069$ ）の深層モジュロ空間（法 $p^3$ ）における高次 $p$-進展開係数を決定論的に抽出可能であることを確認した。本研究は、非正則素数の分布および高次剰余空間における数論的性質の解明に寄与する手法として位置づけられる。
+計算機的実証により、本手法が特異点における判定を維持し、$p=100069$ の法 $p^3$ のモジュロ空間において、高次 $p$-進展開係数を決定論的に抽出できることを確認した。なお、この特異点はジェノッキ数 $G_k=2(1-2^k)B_k$ を経由することによって生じるものであり、ベルヌーイ数を直接与える方向の展開（$t\coth\frac t2$ の展開、べき級数法 [12]）では生じない。本研究は、非正則素数の分布および高次剰余空間における数論的性質の解明に寄与する手法として位置づけられる。
 
 ---
 
@@ -390,6 +390,7 @@ def analyze_irregular_primes(p, power=3):
     A_tilde = poly_mul_5prime(C_tilde, I_tilde, mod_space)[:N + 1]
 
     irregular_count = 0
+    undecided = []  # 法 p^power では精度不足で判定できなかった k
     for M in range(0, N + 1):
         m = N - M
         two_m = 2 * m
@@ -405,9 +406,12 @@ def analyze_irregular_primes(p, power=3):
         # p-進付値の計算と次元降下の判定
         vp = 0
         temp = denom
-        while temp % p == 0 and temp > 0:
-            vp += 1
-            temp //= p
+        if denom == 0:
+            vp = power  # 法の中で完全に 0（付値は法の指数以上）
+        else:
+            while temp % p == 0:
+                vp += 1
+                temp //= p
 
         if vp == 0:
             B_k_mod = (G_k_mod * pow(denom, -1, mod_space)) % mod_space
@@ -430,8 +434,12 @@ def analyze_irregular_primes(p, power=3):
                     A1 = (B_k_reduced // p) % p if reduced_power >= 2 else 0
                     A2 = (B_k_reduced // p**2) % p if reduced_power >= 3 else 0
                     irregular_count += 1
+            else:
+                undecided.append(k)
 
     elapsed = time.time() - start_time
+    if undecided:
+        print(f"判定不能（法 p^{power} では精度不足）: k = {undecided}")
     return irregular_count, elapsed
 
 if __name__ == "__main__":
@@ -632,6 +640,7 @@ def analyze_irregular_primes(p, power=3):
     print("-" * 50)
 
     irregular_count = 0
+    undecided = []  # 法 p^power では精度不足で判定できなかった k
     for M in range(0, N + 1):
         m = N - M
         two_m = 2 * m
@@ -645,9 +654,12 @@ def analyze_irregular_primes(p, power=3):
 
         vp = 0
         temp = denom
-        while temp % p == 0 and temp > 0:
-            vp += 1
-            temp //= p
+        if denom == 0:
+            vp = power  # 法の中で完全に 0（付値は法の指数以上）
+        else:
+            while temp % p == 0:
+                vp += 1
+                temp //= p
 
         if vp == 0:
             B_k_mod = (G_k_mod * pow(denom, -1, mod_space)) % mod_space
@@ -673,10 +685,14 @@ def analyze_irregular_primes(p, power=3):
                     print(f"[発見/降下] 非正則ペア: k = {k} (精度: p^{reduced_power})")
                     print(f"            B_{k} \u2261 {A0} + {A1}*p + {A2}*p^2")
                     irregular_count += 1
+            else:
+                undecided.append(k)
 
     elapsed = time.time() - start_time
     print("-" * 50)
     print(f"スキャン完了！ 発見された非正則ペア数: {irregular_count} 個")
+    if undecided:
+        print(f"判定不能（法 p^{power} では精度不足、法を上げて再計算が必要）: k = {undecided}")
     print(f"総計算時間: {elapsed:.3f} 秒")
 
 if __name__ == "__main__":
@@ -917,6 +933,7 @@ def analyze_hybrid_10m(p, power=3):
     
     print("[処理] クンマー合同式 評価スキャン")
     irregular_count = 0
+    undecided = []  # 法 p^power では精度不足で判定できなかった k
     for M_idx in range(N + 1):
         A_val = A_final[M_idx]
         m = N - M_idx
@@ -931,9 +948,12 @@ def analyze_hybrid_10m(p, power=3):
 
         vp = 0
         temp_d = denom
-        while temp_d % p == 0 and temp_d > 0:
-            vp += 1
-            temp_d //= p
+        if denom == 0:
+            vp = power  # 法の中で完全に 0（付値は法の指数以上）
+        else:
+            while temp_d % p == 0:
+                vp += 1
+                temp_d //= p
 
         if vp == 0:
             B_k_mod = (G_k_mod * pow(denom, -1, mod_space)) % mod_space
@@ -956,11 +976,15 @@ def analyze_hybrid_10m(p, power=3):
                     A2_val = (B_k_reduced // p**2) % p if reduced_power >= 3 else 0
                     irregular_count += 1
                     print(f"  [発見] 非正則ペア(特異点): k={k} | B_{k} ≡ 0 + {A1_val}*p + {A2_val}*p^2 (mod p^{reduced_power})")
+            else:
+                undecided.append(k)
 
     elapsed = time.time() - start_time
     print(f"=== スキャン完了 ===")
     print(f"総計算時間: {elapsed:.4f} 秒")
     print(f"発見数: {irregular_count} 個")
+    if undecided:
+        print(f"判定不能（法 p^{power} では精度不足、法を上げて再計算が必要）: k = {undecided}")
 
 if __name__ == "__main__":
     analyze_hybrid_10m(10000019, power=3)
@@ -1152,3 +1176,5 @@ if __name__ == "__main__":
 [9] Hart, W., Harvey, D., & Ong, W. (2017). "Irregular primes to two billion." *Mathematics of Computation*, 86(308), 3031-3049.
 [10] Harvey, D. (2010). "A multimodular algorithm for computing Bernoulli numbers." *Mathematics of Computation*, 79(272), 2361-2370.
 [11] Kellner, B. C. (2007). "On irregular prime power divisors of the Bernoulli numbers." *Mathematics of Computation*, 76(257), 405-441.
+[12] Buhler, J. P., Crandall, R. E., & Sompolski, R. W. (1992). "Irregular primes to one million." *Mathematics of Computation*, 59(200), 717-722.
+[13] Buhler, J. P., & Harvey, D. (2011). "Irregular primes to 163 million." arXiv:0912.2121.
