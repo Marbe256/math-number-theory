@@ -364,7 +364,7 @@ $$\sum_{j=1}^{p-1}j^k\equiv p\,B_k \pmod{p^2}$$
 [2] 多項式差分の逆連鎖分割公式集 (c=2 ～ c=20)
 [3] 多項式差分の連鎖分割と双曲線関数の対応に基づく非正則素数の評価手法と計算量 $O(p \log p)$ アルゴリズムの提案（2026/05/06）
 [4] パリティ制限付き連鎖分割の経路和から創発するオイラー数（2026/03/21）
-[Mat-ECS] M. Matsuda, 対称べき乗和の端点・中心評価と coth 型展開（endpoint_center_evaluation_symmetric_power_sums.md）.
+[Mat-ECS] M. Matsuda, 対称べき乗和の項別恒等式と端点・中心評価：連鎖分割の境界条件の統一とベルヌーイ数漸化式の導出, 2026/10/30（endpoint_center_evaluation_symmetric_power_sums.md）.
 
 ---
 
